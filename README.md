@@ -53,12 +53,12 @@ C:\dev\projects\> git clone https://github.com/hopelife/mstb.git
 - 신규 계좌 개설
 - 이베스트 마인 > 공인인증서 발급
 - 모의투자 신청
-![ebest01](./_docs/images/ebest01.png)
-![ebest02](./_docs/images/ebest02.png)
-![ebest03](./_docs/images/ebest03.png)
-![ebest04](./_docs/images/ebest04.png)
-![ebest05](./_docs/images/ebest05.png)
-![ebest06](./_docs/images/ebest06.png)
+![ebest01](./_docs/images/ebest01.jpg)
+![ebest02](./_docs/images/ebest02.jpg)
+![ebest03](./_docs/images/ebest03.jpg)
+![ebest04](./_docs/images/ebest04.jpg)
+![ebest05](./_docs/images/ebest05.jpg)
+![ebest06](./_docs/images/ebest06.jpg)
 
 #### PC
 - 공인인증서 복사(스마트폰 -> PC)
