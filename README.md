@@ -64,3 +64,4 @@ C:\dev\projects\> git clone https://github.com/hopelife/mstb.git
 - 공인인증서 복사(스마트폰 -> PC)
 - 공인인증서 로그인
 - xingAPI 패키지 설치(C:\eBEST\xingAPI)
+- 통합 홈트레이딩시스템(HTS) 설치
