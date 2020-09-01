@@ -6,6 +6,10 @@ META-INF/
 conf/
 config/
 
+# config files #
+config.ini
+path.ini
+
 # Package Files #
 *.jar
 *.war
