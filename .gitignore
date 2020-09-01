@@ -3,6 +3,7 @@ target/
 .idea
 classes/
 META-INF/
+conf/
 config/
   
 # Package Files #
