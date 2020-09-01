@@ -5,13 +5,13 @@ classes/
 META-INF/
 conf/
 config/
-  
+
 # Package Files #
 *.jar
 *.war
 *.ear
 *.db
-  
+
 ######################
 # Windows
 ######################
