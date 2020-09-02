@@ -73,3 +73,9 @@ C:\dev\projects\> git clone https://github.com/hopelife/mstb.git
 
 ## unittest
 (ml32) C:\dev\projects\mstb> python -m unittest tests.test_agent_ebests
+
+
+# 공공데이터 수집(p71)
+
+- data.go.kr
+- 한국예탁결제원_기업정보서비스
