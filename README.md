@@ -79,3 +79,16 @@ C:\dev\projects\> git clone https://github.com/hopelife/mstb.git
 
 - data.go.kr
 - 한국예탁결제원_기업정보서비스
+
+
+# install mongoDB(p108)
+- https://www.mongodb.com/
+- https://www.mongodb.com/try/download/community
+
+
+# install pymongo
+```
+C:\> cd C:\dev\projects\mstb
+C:\dev\projects\mstb> conda activate ml32
+(ml32) C:\dev\projects\mstb>pip install pymongo
+```
