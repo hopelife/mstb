@@ -284,6 +284,33 @@ class EBest:
         return result
 
 
+    def get_account_info(self):
+        """TR: CSPAQ12200 현물계좌 예수금/주문가능금액/총평가
+        :return result:list Field CSPAQ12200 참고
+        """
+        in_params = {"RecCnt":"1", "AcntNo": self.account, "Pwd": self.passwd}
+        out_params =["MnyOrdAbleAmt", "BalEvalAmt", "DpsastTotamt", 
+                    "InvstOrgAmt", "InvstPlAmt", "Dps"]
+        result = self._execute_query("CSPAQ12200",
+                                    "CSPAQ12200InBlock1",
+                                    "CSPAQ12200OutBlock2",
+                                    *out_params,
+                                    **in_params)
+        return result
+
+
+    def get_account_stock_info(self):
+        """TR: CSPAQ12300 현물계좌 잔고내역 조회
+        :return result:list 계좌 보유 종목 정보
+        """
+        in_params = {"RecCnt": "1", "AcntNo": self.account, "Pwd": self.passwd, "BalCreTp": "0", "CmsnAppTpCode": "0", "D2balBaseQryTp": "0", "UprcTpCode": "0"}
+        out_params =["IsuNo", "IsuNm", "BnsBaseBalQty", "SellPrc", "BuyPrc", "NowPrc", "AvrUprc", "PnlRat", "BalEvalAmt"]
+        result = self._execute_query("CSPAQ12300",
+                                    "CSPAQ12300InBlock1",
+                                    "CSPAQ12300OutBlock3",
+                                    *out_params,
+                                    **in_params)
+
 class Field:
     t1101 = {
         "t1101OutBlock":{
