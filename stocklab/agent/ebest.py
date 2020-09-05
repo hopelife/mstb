@@ -311,6 +311,133 @@ class EBest:
                                     *out_params,
                                     **in_params)
 
+
+    def order_stock(self, code, qty, price, bns_type, order_type="00"):
+        """TR: CSPAT00600 현물 정상 주문
+        :param bns_type:str 매매타입, 1:매도, 2:매수
+        :prarm order_type:str 호가유형, 
+            00:지정가, 03:시장가, 05:조건부지정가, 07:최우선지정가
+            61:장개시전시간외 종가, 81:시간외종가, 82:시간외단일가
+        :return result:dict 주문 관련정보
+        """
+        in_params = {"AcntNo":self.account, "InptPwd":self.passwd, "IsuNo":code, "OrdQty":qty,
+                    "OrdPrc":price, "BnsTpCode":bns_type, "OrdprcPtnCode":order_type, "MgntrnCode":"000",
+                    "LoanDt":"", "OrdCndiTpCode":"0"}
+        out_params = ["OrdNo", "OrdTime", "OrdMktCode", "OrdPtnCode", "ShtnIsuNo", "MgempNo", "OrdAmt", "SpotOrdQty", "IsuNm"]
+
+        result = self._execute_query("CSPAT00600",
+                                    "CSPAT00600InBlock1",
+                                    "CSPAT00600OutBlock2",
+                                    *out_params,
+                                    **in_params)
+        return result
+
+
+    def order_cancel(self, order_no, code, qty):
+        """TR: CSPAT00800 현물 취소주문
+        :param order_no:str 주문번호
+        :param code:str 종목코드
+        :param qty:str 취소 수량
+        :return result:dict 취소 결과
+        """
+        in_params = {"OrgOrdNo":order_no,"AcntNo":self.account, "InptPwd":self.passwd, "IsuNo":code, "OrdQty":qty}
+        out_params = ["OrdNo", "PrntOrdNo", "OrdTime", "OrdPtnCode", "ShtnIsuNo", "IsuNm"]
+
+        result = self._execute_query("CSPAT00800",
+                                    "CSPAT00800InBlock1",
+                                    "CSPAT00800OutBlock2",
+                                    *out_params,
+                                    **in_params)
+        return result
+
+
+    def order_check(self, order_no=None):
+        """TR: t0425 주식 체결/미체결
+        :param code:str 종목코드
+        :param order_no:str 주문번호
+        :return result:dict 주문번호의 체결상태
+        """
+        in_params = {"accno": self.account, "passwd": self.passwd, "expcode": "", 
+                    "chegb":"0", "medosu":"0", "sortgb":"1", "cts_ordno":" "}
+        out_params = ["ordno", "expcode", "medosu", "qty", "price", "cheqty", "cheprice", "ordrem", "cfmqty", "status", "orgordno", "ordgb", "ordermtd", "sysprocseq", "hogagb", "price1", "orggb", "singb", "loandt"]
+        result_list = self._execute_query("t0425",
+                                    "t0425InBlock",
+                                    "t0425OutBlock1",
+                                    *out_params,
+                                    **in_params)
+        
+        result = {}
+        if order_no is not None:
+            for item in result_list:
+                if item["주문번호"] == order_no:
+                    result = item
+            return result
+        else:
+            return result_list
+
+
+    def order_check2(self, date, code, order_no=None):
+        #CSPAQ13700
+        print("get_order_check, ", order_no)
+        in_params = {"RecCnt":"1", "AcntNo":self.account, "InptPwd":self.passwd, "OrdMktCode":"00", 
+                    "BnsTpCode":"0", "IsuNo":code, "ExecYn":"0", "OrdDt":date, "SrtOrdNo2":"0", 
+                    "BkseqTpCode":"0", "OrdPtnCode":"00"}
+
+        out_params_3 = ["OrdDt", "OrdMktCode", "OrdNo", "OrgOrdNo", "IsuNo", 
+                     "IsuNm", "BnsTpCode", "BnsTpNm", "OrdPtnCode", "OrdPtnNm", 
+                     "MrcTpCode", "OrdQty", "OrdPrc", "ExecQty", "ExecPrc", "LastExecTime", 
+                     "OrdprcPtnCode", "OrdprcPtnNm", "AllExecQty", "OrdTime"]
+        result_list = self._execute_query("CSPAQ13700",
+                                    "CSPAQ13700InBlock1",
+                                    "CSPAQ13700OutBlock3",
+                                    *out_params_3,
+                                    **in_params)
+        
+        result = {}
+        print("get_order_check result len", len(result_list))
+        if order_no is not None:
+            for item in result_list:
+                if item["주문번호"] == order_no:
+                    result = item
+            return result
+        else:
+            return result_list
+
+
+    def get_current_call_price_by_code(self, code=None):
+        """TR: t1101 주식 현재가 호가 조회
+        :param code:str 종목코드
+        """
+        tr_code = "t1101"
+        in_params = {"shcode": code}
+        out_params =["hname", "price", "sign", "change", "diff", "volume", 
+            "jnilclose", "offerho1","bidho1", "offerrem1", "bidrem1",
+            "offerho2","bidho2", "offerrem2", "bidrem2",
+            "offerho3","bidho3", "offerrem3", "bidrem3",
+            "offerho4","bidho4", "offerrem4", "bidrem4",
+            "offerho5","bidho5", "offerrem5", "bidrem5",
+            "offerho6","bidho6", "offerrem6", "bidrem6",
+            "offerho7","bidho7", "offerrem7", "bidrem7",
+            "offerho8","bidho8", "offerrem8", "bidrem8",
+            "offerho9","bidho9", "offerrem9", "bidrem9",
+            "offerho10","bidho10", "offerrem10", "bidrem10",
+            "preoffercha10", "prebidcha10", "offer", "bid",
+            "preoffercha", "prebidcha", "hotime", "yeprice", "yevolume",
+            "yesign", "yechange", "yediff", "tmoffer", "tmbid", "ho_status",
+            "shcode", "uplmtprice", "dnlmtprice", "open", "high", "low"]
+
+        result = self._execute_query("t1101", 
+                                "t1101InBlock", 
+                                "t1101OutBlock",
+                                *out_params,
+                                **in_params)
+
+        for item in result:
+            item["code"] = code
+
+        return result
+
+
 class Field:
     t1101 = {
         "t1101OutBlock":{
