@@ -92,3 +92,22 @@ C:\> cd C:\dev\projects\mstb
 C:\dev\projects\mstb> conda activate ml32
 (ml32) C:\dev\projects\mstb>pip install pymongo
 ```
+
+# window scheduler batch file
+- C:\dev\projects\mstb\scripts\start_data_collector_1d.bat
+```
+ECHO ============================
+ECHO Conda Activate
+@CALL "C:\ProgramData\Anaconda3\Scripts\activate.bat" ml32
+ECHO ============================
+ECHO Change Directory
+cd C:\dev\projects\mstb
+ECHO ============================
+ECHO Execute Python
+python -m stocklab.scheduler.data_collector_1d %*;
+```
+
+# python scheduler
+```
+(ml32) C:\dev\projects\mstb> pip install apscheduler
+```
