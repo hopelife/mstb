@@ -63,31 +63,31 @@ class TestEbest(unittest.TestCase):
     #     print(result)
 
 
-    def test_order_stock(self):
-        print(inspect.stack()[0][3])
-        result = self.ebest.order_stock("005930", "2", "46000", "2", "00")
-        assert result
-        print(result)
-        #code = result[0]["ShtnIsuNo"]
-        #order_no = result[0]["OrdNo"]
-        #print(code, order_no)
-        #time.sleep(1)
-        #result1 = self.ebest.get_order_check("005930", order_no)
-        #print(result1)
+    # def test_order_stock(self):
+    #     print(inspect.stack()[0][3])
+    #     result = self.ebest.order_stock("005930", "2", "46000", "2", "00")
+    #     assert result
+    #     print(result)
+    #     #code = result[0]["ShtnIsuNo"]
+    #     #order_no = result[0]["OrdNo"]
+    #     #print(code, order_no)
+    #     #time.sleep(1)
+    #     #result1 = self.ebest.get_order_check("005930", order_no)
+    #     #print(result1)
 
 
-    def test_order_cancel(self):
-        print(inspect.stack()[0][3])
-        result = self.ebest.order_cancel("29515", "A005930", "2")
-        assert result
-        print(result)
+    # def test_order_cancel(self):
+    #     print(inspect.stack()[0][3])
+    #     result = self.ebest.order_cancel("29515", "A005930", "2")
+    #     assert result
+    #     print(result)
 
 
-    def test_order_check(self):
-        print(inspect.stack()[0][3])
-        result = self.ebest.order_check("29515")
-        assert result
-        print(result)
+    # def test_order_check(self):
+    #     print(inspect.stack()[0][3])
+    #     result = self.ebest.order_check("29515")
+    #     assert result
+    #     print(result)
 
 
     # def test_get_current_call_price_by_code(self):
@@ -95,6 +95,20 @@ class TestEbest(unittest.TestCase):
     #     result = self.ebest.get_current_call_price_by_code("005930")
     #     assert result
     #     print(result)
+
+
+    def test_get_price_n_min_by_code(self):
+        print(inspect.stack()[0][3])
+        result = self.ebest.get_price_n_min_by_code("20200903", "180640")
+        assert result
+        print(result)
+
+
+    def test_get_price_n_min_by_code_tick(self):
+        print(inspect.stack()[0][3])
+        result = self.ebest.get_price_n_min_by_code("20200903", "005930", 0)
+        assert result
+        print(result)
 
 
     def tearDown(self):
