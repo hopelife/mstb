@@ -5,6 +5,8 @@ classes/
 META-INF/
 conf/
 config/
+node_modules/
+__pycache__/
 
 # config files #
 config.ini
@@ -36,3 +38,11 @@ Desktop.ini
   
 .DS_Store
 .svn
+
+
+######################
+# node.js
+######################
+package.json
+package-lock.json
+

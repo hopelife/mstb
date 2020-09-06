@@ -92,3 +92,59 @@ C:\> cd C:\dev\projects\mstb
 C:\dev\projects\mstb> conda activate ml32
 (ml32) C:\dev\projects\mstb>pip install pymongo
 ```
+
+# window scheduler batch file
+- C:\dev\projects\mstb\scripts\start_data_collector_1d.bat
+```
+ECHO ============================
+ECHO Conda Activate
+@CALL "C:\ProgramData\Anaconda3\Scripts\activate.bat" ml32
+ECHO ============================
+ECHO Change Directory
+cd C:\dev\projects\mstb
+ECHO ============================
+ECHO Execute Python
+python -m stocklab.scheduler.data_collector_1d %*;
+```
+
+# python scheduler
+```
+(ml32) C:\dev\projects\mstb> pip install apscheduler
+```
+
+
+# flask REST API server
+```
+(ml32) C:\dev\projects\mstb> python -m pip install Flask Flask-Restful flask-cors
+```
+
+
+# react app
+```
+C:\dev\projects\mstb>mkdir client
+C:\dev\projects\mstb>cd client
+C:\dev\projects\mstb\client>npx create-react-app stocklab-react
+```
+
+# material ui
+```
+C:\dev\projects\mstb\client\stocklab-react> npm install @material-ui/core @material-ui/icons --save
+```
+
+# start react app
+```
+C:\dev\projects\mstb\client\stocklab-react> npm start
+```
+
+
+# react-sample
+```
+C:\dev\projects\mstb\client> npx create-react-app react-sample
+```
+
+# react-select
+```
+C:\dev\projects\mstb\client\stocklab-react> npm install react-select --save
+C:\dev\projects\mstb\client\stocklab-react> npm install recharts --save
+C:\dev\projects\mstb\client\stocklab-react> npm install material-table --save
+```
