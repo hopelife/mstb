@@ -111,3 +111,10 @@ python -m stocklab.scheduler.data_collector_1d %*;
 ```
 (ml32) C:\dev\projects\mstb> pip install apscheduler
 ```
+
+
+# flask REST API server
+```
+(ml32) C:\dev\projects\mstb> pip install Flask Flask-Restful
+(ml32) C:\dev\projects\mstb> pip install flask-cors
+```
