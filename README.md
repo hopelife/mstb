@@ -118,3 +118,27 @@ python -m stocklab.scheduler.data_collector_1d %*;
 (ml32) C:\dev\projects\mstb> pip install Flask Flask-Restful
 (ml32) C:\dev\projects\mstb> pip install flask-cors
 ```
+
+
+# react app
+```
+C:\dev\projects\mstb>mkdir client
+C:\dev\projects\mstb>cd client
+C:\dev\projects\mstb\client>npx create-react-app stocklab-react
+```
+
+# material ui
+```
+C:\dev\projects\mstb\client\stocklab-react> npm install @material-ui/core @material-ui/icons --save
+```
+
+# start react app
+```
+C:\dev\projects\mstb\client\stocklab-react> npm start
+```
+
+
+# react-sample
+```
+C:\dev\projects\mstb\client> npx create-react-app react-sample
+```
