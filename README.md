@@ -115,8 +115,7 @@ python -m stocklab.scheduler.data_collector_1d %*;
 
 # flask REST API server
 ```
-(ml32) C:\dev\projects\mstb> pip install Flask Flask-Restful
-(ml32) C:\dev\projects\mstb> pip install flask-cors
+(ml32) C:\dev\projects\mstb> python -m pip install Flask Flask-Restful flask-cors
 ```
 
 
@@ -141,4 +140,11 @@ C:\dev\projects\mstb\client\stocklab-react> npm start
 # react-sample
 ```
 C:\dev\projects\mstb\client> npx create-react-app react-sample
+```
+
+# react-select
+```
+C:\dev\projects\mstb\client\stocklab-react> npm install react-select --save
+C:\dev\projects\mstb\client\stocklab-react> npm install recharts --save
+C:\dev\projects\mstb\client\stocklab-react> npm install material-table --save
 ```

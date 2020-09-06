@@ -6,6 +6,7 @@ META-INF/
 conf/
 config/
 node_modules/
+__pycache__/
 
 # config files #
 config.ini
