@@ -5,8 +5,7 @@ classes/
 META-INF/
 conf/
 config/
-node_modules/
-__pycache__/
+
 
 # config files #
 config.ini
@@ -41,8 +40,16 @@ Desktop.ini
 
 
 ######################
+# python
+######################
+__pycache__/
+*.pyc
+
+
+######################
 # node.js
 ######################
+node_modules/
 package.json
 package-lock.json
 
