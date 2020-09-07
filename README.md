@@ -71,6 +71,15 @@ C:\dev\projects\> git clone https://github.com/hopelife/mstb.git
 - open DevCenter
 - download res files
 
+
+## 
+```
+set CONDA_FORCE_32BIT=1 && conda create --name <가상환경명> <패키지명>
+
+set CONDA_FORCE_32BIT=1 && conda create --name stock-lab python=3.7
+```
+
+
 ## unittest
 (ml32) C:\dev\projects\mstb> python -m unittest tests.test_agent_ebests
 
