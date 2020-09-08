@@ -62,7 +62,6 @@ class EBest:
         # config = configparser.ConfigParser()
         config = configparser.RawConfigParser()
         config.read(os.path.join(os.path.dirname(__file__), 'conf', 'config.ini'))
-        # config.read('C:\\dev\\projects\\mstb\\stocklab\\agent\\conf\\config.ini')
 
         self.user = config[run_mode]['user']
         self.passwd = config[run_mode]['password']

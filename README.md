@@ -3,9 +3,18 @@
 
 
 # reference
-- book: 파이썬과 리액트를 활용한 주식 자동거래 시스템 구축
-- git1: [https://github.com/wikibook/stock-trading](https://github.com/wikibook/stock-trading)
-- git1: [https://github.com/helloalpaca/QuantBot](https://github.com/helloalpaca/QuantBot)
+## book
+- 파이썬과 리액트를 활용한 주식 자동거래 시스템 구축
+- [파이썬과 케라스를 이용한 딥러닝/강화학습 주식투자 (개정판)](http://blog.quantylab.com/pages/rltrader.html)
+- [파이썬을 이용한 자동 주식투자 시스템 개발 튜토리얼](http://blog.quantylab.com/systrading.html)
+
+
+## gut
+- [https://github.com/wikibook/stock-trading](https://github.com/wikibook/stock-trading)
+- [https://github.com/helloalpaca/QuantBot](https://github.com/helloalpaca/QuantBot)
+- [파이썬과 케라스를 이용한 딥러닝/강화학습 주식투자](https://github.com/quantylab/rltrader)
+
+- [파이썬을 이용한 자동 주식투자 시스템 개발 튜토리얼](https://github.com/quantylab/systrader)
 
 
 # dev environment
